@@ -9,6 +9,8 @@ output: html_document
 require(tidyverse)
 require(tigerstats)
 triUmp <-read.csv(file="triUmpsal.csv",header=TRUE)
+mydata2 <- select(triUmp,-one_of("x")) #preferred method to remove a few variables
+Females <- filter(mydata2,gender=="F") #Females becomes out reference data set
 ```
 
 # Introduction
@@ -30,8 +32,8 @@ A new  preventative aides drug (triUmpsal) is under test in clinical trials. Con
 ### Graphical Descriptive Results
 
 ```{r}
-barchartGC(~infected + treatment,data=triUmp)
-barchartGC(~infected + treatment,data=triUmp, type="percent")
+barchartGC(~infected + treatment,data=Females)
+barchartGC(~infected + treatment,data=Females, type="percent")
 
 ```
 
@@ -42,7 +44,7 @@ barchartGC(~infected + treatment,data=triUmp, type="percent")
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 ```{r}
-table1 <- xtabs(~infected + treatment, data=triUmp)
+table1 <- xtabs(~infected + treatment, data=Females)
 rowPerc(table1)
 colPerc(table1)
 ```
