@@ -29,7 +29,14 @@ A new  preventative aides drug (triUmpsal) is under test in clinical trials. Con
 
 ## Descriptive Results
 
+
+
+
 ### Graphical Descriptive Results
+
+
+
+<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
 ```{r}
 barchartGC(~infected + treatment,data=Females)
@@ -37,7 +44,8 @@ barchartGC(~infected + treatment,data=Females, type="percent")
 
 ```
 
-<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+
+The bar chart shows that taking the drug vs the placebo may have no effect.
 
 ### Numerical Descriptive Results
 
@@ -63,3 +71,4 @@ fisher.test(table1)
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+We reject the null hypothesis. Therefore we wont give the vaccine to women because the data shows the vaccine makes women more susceptible 1.5 odds ratio to placebo.  
